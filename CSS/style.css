@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    background-color: rgb(246, 245, 243);
+}
+.body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.title{
+    max-width: 500px;
+}
+.wrapper{
+    max-width: 1440px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 40px;
+}
+h1{
+    font-size: 70px;
+    font-weight: bold;
+    color: rgb(14, 176, 240);
+}
+.left{
+    margin-left: 80px ;
+}
+.restart{
+    color: rgb(55, 35, 10);
+    width: 175px;
+    height: 50px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 2px solid #785343;
+    transition: all .2s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+.restart:hover{
+    background: #acc9de;
+    color: blue;
+}
+.game{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+.header{
+    display: flex;
+    color: #acc9de;
+    font-size: 24px;
+}
+.header .player-X{
+    flex: 1;
+    border-bottom: 5px solid rgb(145, 246, 204);
+    padding-bottom: 8px;
+}
+.player-X.active{
+    color: #0890f1;
+    border-color: #34719d;
+}
+.header .player-O{
+    flex: 1;
+    border-bottom: 5px solid rgb(145, 246, 204);
+    padding-bottom: 8px;
+}
+.player-O.active{
+    color: #b0d3ec;
+    border-color: #4da9eb;
+}
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0px;
+    flex-grow: 1;
+    padding: 10px;
+}
+.board-tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    background: rgb(246, 245, 243);
+    cursor: pointer;
+}
+.board-tile:not(:nth-child(3n)){
+    border-right: 3px solid rgb(192, 155, 229);
+}
+.board-tile:not(:nth-last-child(-n + 3)){
+    border-bottom: 3px solid rgb(192, 155, 229);
+}
+.board-tile:hover{
+    background: #eee;
+}
+
+.tile-X{
+    color: #42BED7;
+}
+.tile-O{
+    color: #D7BAFB;
+}
+.tile-winner span{
+    color: green;
+}
+
+@media only screen and (max-width :1100px){
+    .wrapper{
+        flex-direction: column;
+    }
+    .left{
+        margin-bottom: 50px;
+    }
+}
